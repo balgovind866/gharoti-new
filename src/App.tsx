@@ -1,5 +1,5 @@
 // filepath: /Users/balgovindkushwaha/gharoti/src/App.jsx
-import React from "react";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./pages/Navbar";
 import Footer from "./pages/Footer";
@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 
 
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import Subscription from "./pages/Subscription";
+
 import SubscriptionRoti from "./pages/SubscriptionRoti";
 import SubscriptionMeat from "./pages/SubscriptionMeat";
 import SubscriptionEggs from "./pages/SubscriptionEggs";

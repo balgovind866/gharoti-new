@@ -1,10 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { 
-  ArrowRight, 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Clock,
+  ArrowRight,
   CheckCircle,
   Users,
   Target,
@@ -12,7 +8,6 @@ import {
   Shield,
   Award
 } from "lucide-react";
-
 const AboutUs = () => {
   const [isVisible, setIsVisible] = useState(false);
 

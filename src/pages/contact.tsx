@@ -28,17 +28,17 @@ const Contact = () => {
     setIsVisible(true);
   }, []);
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value
+  });
+};
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-  };
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+  console.log("Form submitted:", formData);
+};
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-gray-100">

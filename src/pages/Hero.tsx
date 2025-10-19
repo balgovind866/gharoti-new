@@ -1,18 +1,12 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+
 import {
   Search,
   Headphones,
   Tag,
   Truck,
   Wallet,
-  MapPin,
-  Phone,
-  Mail,
-  Clock,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Twitter,
+
   ArrowRight,
 } from "lucide-react";
 
@@ -323,7 +317,7 @@ const Hero = () => {
     </section>
 
     
-      <style jsx>{`
+      <style >{`
         @keyframes fade-in {
           from {
             opacity: 0;

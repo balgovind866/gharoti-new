@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Check, ArrowRight, Phone, Mail, MapPin, Clock } from "lucide-react";
 
+import { useState } from "react";
+import { Check, ArrowRight } from "lucide-react";
 const SubscriptionMeat = () => {
-  const [hoveredCard, setHoveredCard] = useState(null);
+    const [hoveredCard, setHoveredCard] = useState<number | null>(null); 
 
   const plans = [
     {

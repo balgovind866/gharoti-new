@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import { Check, ArrowRight, Phone, Mail, MapPin, Clock } from "lucide-react";
-
+import { useState } from "react";
+import { Check, ArrowRight } from "lucide-react";
 const SubscriptionEggs = () => {
-  const [hoveredCard, setHoveredCard] = useState(null);
+   const [hoveredCard, setHoveredCard] = useState<number | null>(null); 
 
   const plans = [
     {
@@ -141,9 +140,10 @@ const SubscriptionEggs = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {plans.map((plan) => (
               <div
-                key={plan.id}
-                onMouseEnter={() => setHoveredCard(plan.id)}
-                onMouseLeave={() => setHoveredCard(null)}
+                      key={plan.id}
+      //onMouseEnter={() => setHoveredCard(plan.id)}  // ✅ Now it will work
+      onMouseLeave={() => setHoveredCard(null)}
+
                 className={`bg-white rounded-3xl p-8 shadow-lg transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl ${
                   plan.highlighted ? "ring-4 ring-orange-500 scale-105" : ""
                 }`}
