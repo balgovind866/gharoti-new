@@ -19,7 +19,7 @@ const Hero = () => {
   const images = [
     "https://firebasestorage.googleapis.com/v0/b/chatapps3-af7a5.appspot.com/o/gharoti%2FChatGPT_Image_Oct_18__2025__01_29_41_AM-removebg-preview.png?alt=media&token=dfd893ef-1787-469f-9124-e74b6d44ee94",
     "https://firebasestorage.googleapis.com/v0/b/chatapps3-af7a5.appspot.com/o/gharoti%2FChatGPT%20Image%20Oct%2019%2C%202025%2C%2012_13_16%20AM%20(1).png?alt=media&token=e4ea01aa-3ed3-4593-8bbf-c6a30d36b26e",
-    "https://firebasestorage.googleapis.com/v0/b/chatapps3-af7a5.appspot.com/o/gharoti%2FChatGPT_Image_Oct_18__2025__01_29_41_AM-removebg-preview.png?alt=media&token=dfd893ef-1787-469f-9124-e74b6d44ee94",
+    "https://firebasestorage.googleapis.com/v0/b/chatapps3-af7a5.appspot.com/o/gharoti%2FMG8A3875_d6547b84-265c-42ac-896f-583de6327e11.png?alt=media&token=915fb689-81c8-4549-bdc2-661d2de8c923",
   ];
 
   useEffect(() => {
