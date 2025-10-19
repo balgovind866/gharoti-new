@@ -17,9 +17,9 @@ const Hero = () => {
   
 
   const images = [
-    "src/assets/ChatGPT_Image_Oct_18__2025__01_29_41_AM-removebg-preview.png",
-    "src/assets/ChatGPT Image Oct 19, 2025, 12_13_16 AM (1).png",
-    "src/assets/MG8A3875_d6547b84-265c-42ac-896f-583de6327e11.png",
+    "https://firebasestorage.googleapis.com/v0/b/chatapps3-af7a5.appspot.com/o/gharoti%2FChatGPT_Image_Oct_18__2025__01_29_41_AM-removebg-preview.png?alt=media&token=dfd893ef-1787-469f-9124-e74b6d44ee94",
+    "https://firebasestorage.googleapis.com/v0/b/chatapps3-af7a5.appspot.com/o/gharoti%2FChatGPT%20Image%20Oct%2019%2C%202025%2C%2012_13_16%20AM%20(1).png?alt=media&token=e4ea01aa-3ed3-4593-8bbf-c6a30d36b26e",
+    "https://firebasestorage.googleapis.com/v0/b/chatapps3-af7a5.appspot.com/o/gharoti%2FChatGPT_Image_Oct_18__2025__01_29_41_AM-removebg-preview.png?alt=media&token=dfd893ef-1787-469f-9124-e74b6d44ee94",
   ];
 
   useEffect(() => {
@@ -277,7 +277,7 @@ const Hero = () => {
 
             {/* Main Image */}
             <img
-              src="src/assets/home_page_4.png"
+              src="https://firebasestorage.googleapis.com/v0/b/chatapps3-af7a5.appspot.com/o/gharoti%2Fhome_page_4.png?alt=media&token=15566f3a-7e9b-4a16-a44e-94cac1510e5d"
               alt="Grocery Man"
               className="relative z-10 w-[460px] h-[460px] object-cover rounded-full"
             />
