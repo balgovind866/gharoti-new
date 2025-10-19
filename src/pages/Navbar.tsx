@@ -117,6 +117,9 @@ const navigate = useNavigate();
 
             {/* Other Nav Links */}
            <nav className="flex items-center space-x-8 text-sm font-medium">
+              <div onClick={() => navigate('/')} className="text-black hover:text-green-600 transition">
+    Home
+  </div>
   <div onClick={() => navigate('/aboutUs')} className="text-black hover:text-green-600 transition">
     About Us
   </div>
