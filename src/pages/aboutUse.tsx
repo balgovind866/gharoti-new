@@ -16,10 +16,10 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br bg-white">
       {/* Hero Banner */}
-      <section className="relative h-[300px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r to-green-50 to-green-50"></div>
+      <section className="relative h-[150px] pt-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r  bg-white"></div>
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-40"
          
@@ -193,7 +193,7 @@ const AboutUs = () => {
       </section>
 
       {/* Our Values Section */}
-      <section className="py-20 bg-gradient-to-br from-green-50 to-white">
+      <section className="py-20 bg-gradient-to-br bg-white">
         <div className="max-w-7xl mx-auto px-8 lg:px-12">
           <h2 className="text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-16">
             Our Core Values

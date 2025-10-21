@@ -1,26 +1,28 @@
-import { useEffect, useState } from "react";
-
+import { useState, useEffect } from "react";
 import {
-  Search,
-  Headphones,
-  Tag,
+
   Truck,
+  Tag,
   Wallet,
-
-  ArrowRight,
+  Headphones,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
-const Hero = () => {
+export default function GhaRotiApp() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+ const navigate = useNavigate();
 
-  
 
   const images = [
     "https://firebasestorage.googleapis.com/v0/b/chatapps3-af7a5.appspot.com/o/gharoti%2FChatGPT_Image_Oct_18__2025__01_29_41_AM-removebg-preview.png?alt=media&token=dfd893ef-1787-469f-9124-e74b6d44ee94",
     "https://firebasestorage.googleapis.com/v0/b/chatapps3-af7a5.appspot.com/o/gharoti%2FChatGPT%20Image%20Oct%2019%2C%202025%2C%2012_13_16%20AM%20(1).png?alt=media&token=e4ea01aa-3ed3-4593-8bbf-c6a30d36b26e",
     "https://firebasestorage.googleapis.com/v0/b/chatapps3-af7a5.appspot.com/o/gharoti%2FMG8A3875_d6547b84-265c-42ac-896f-583de6327e11.png?alt=media&token=915fb689-81c8-4549-bdc2-661d2de8c923",
   ];
+
+  
+
+  
 
   useEffect(() => {
     setIsVisible(true);
@@ -31,189 +33,40 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-br from-green-50 to-gray-100 overflow-hidden">
-      {/* Background gradient circles */}
-<div
-  className="absolute bottom-0 right-0 w-96 h-96 bg-green-300 rounded-full opacity-20 blur-3xl animate-pulse"
-  style={{ animationDelay: "1s" }}
-></div>
-
-<div className="max-w-7xl mx-auto px-8 lg:px-12 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-  {/* LEFT CONTENT */}
-  <div
-    className={`space-y-8 transition-all duration-1000 transform ${
-      isVisible
-        ? "translate-x-0 opacity-100"
-        : "-translate-x-20 opacity-0"
-    }`}
-  >
-    {/* Main Heading with Staggered Animation */}
-    <div className="space-y-3">
-      <h1
-        className={`text-4xl lg:text-5xl font-bold text-green-600 leading-tight transition-all duration-700 ${
-          isVisible
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-8 opacity-0"
-        }`}
-      >
-        Fresh Food. Daily Delivery
-      </h1>
+    <div className="bg-white">
       
-      <div
-        className={`inline-block transition-all duration-700 delay-200 ${
-          isVisible
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-8 opacity-0"
-        }`}
-      >
-        <span className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-green-500 via-green-600 to-green-700 bg-clip-text text-transparent animate-gradient">
-          GhaRoti – Life Starts at Home
-        </span>
-      </div>
-    </div>
 
-    {/* Description with Word-by-Word Reveal Effect */}
-    <p
-      className={`text-lg text-gray-800 font-medium leading-relaxed transition-all duration-1000 delay-300 ${
-        isVisible
-          ? "translate-y-0 opacity-100"
-          : "translate-y-10 opacity-0"
-      }`}
-      style={{
-        animationDelay: "0.3s"
-      }}
-    >
-      <span className="inline-block animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-        Enjoy the comfort of fresh, healthy food delivered daily to your doorstep.
-      </span>
-      <br />
-      <span className="inline-block animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
-        GhaRoti offers flexible subscription plans for Rotis, Aata, Chicken, Meat, and Eggs — designed to save your time, energy, and money while keeping your family healthy and satisfied.
-      </span>
-    </p>
+      {/* HERO SECTION */}
 
-    {/* SEARCH BAR with Scale Animation */}
+   <div>
+  <section className="py-6 px-4 lg:px-8 relative overflow-hidden">
+    {/* Background Shape */}
+    <div className="absolute top-0 right-0 w-90 h-90 bg-green-200 rounded-full opacity-20 blur-3xl"></div>
+
     <div
-      className={`bg-white rounded-2xl shadow-lg flex items-center border border-gray-200 overflow-hidden max-w-xl transition-all duration-700 delay-500 transform ${
-        isVisible
-          ? "translate-y-0 opacity-100 scale-100"
-          : "translate-y-10 opacity-0 scale-95"
-      } hover:shadow-2xl hover:scale-[1.02]`}
+      className="max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-10 rounded-4xl p-6 shadow-md"
+      style={{ backgroundColor: "#ffeed6" }}
     >
-      <div className="pl-5 text-green-500 animate-pulse-subtle">
-        <Search className="w-5 h-5" />
-      </div>
-      <input
-        type="text"
-        placeholder="What are you looking for?"
-        className="flex-1 px-4 py-4 text-gray-700 focus:outline-none placeholder:transition-opacity placeholder:duration-300 focus:placeholder:opacity-50"
-      />
-      <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95">
-        Search
-      </button>
-    </div>
-  </div>
-        {/* RIGHT IMAGE - SIMPLE FADE ANIMATION */}
-        <div
-          className={`flex justify-center items-center relative transition-all duration-1000 delay-600 ${
-            isVisible
-              ? "translate-x-0 opacity-100"
-              : "translate-x-20 opacity-0"
-          }`}
-        >
-          <div className="relative w-full max-w-lg h-[500px] flex justify-center items-center">
-            {images.map((img, index) => (
-              <img
-                key={index}
-                src={img}
-                alt={`Slide ${index + 1}`}
-                className={`absolute w-full h-full object-contain transition-opacity duration-1000 ${
-                  index === currentImageIndex ? "opacity-100" : "opacity-0"
-                }`}
-              />
-            ))}
-          </div>
+      {/* LEFT CONTENT */}
+      <div
+        className={`space-y-4 transition-all duration-700 transform ${
+          isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
+        }`}
+      >
+        <div className="space-y-3">
+          <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+            Fresh Food. Daily Delivery
+          </h1>
+          <p className="text-lg lg:text-xl font-bold bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent">
+            GhaRoti – Life Starts at Home
+          </p>
         </div>
-      </div>
 
-      {/* FEATURES SECTION */}
-      <div className="bg-white py-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-8 lg:px-12">
-          {[
-            {
-              icon: <Headphones className="h-7 w-7 text-green-600" />,
-              title: "Customer Support",
-              desc: "24/7 support for all your needs",
-            },
-            {
-              icon: <Tag className="h-7 w-7 text-green-600" />,
-              title: "Best Prices",
-              desc: "Competitive prices guaranteed",
-            },
-            {
-              icon: <Truck className="h-7 w-7 text-green-600" />,
-              title: "Fast Delivery",
-              desc: "Quick delivery to your doorstep",
-            },
-            {
-              icon: <Wallet className="h-7 w-7 text-green-600" />,
-              title: "Easy Payments",
-              desc: "Multiple payment options available",
-            },
-          ].map((feature, index) => (
-            <div
-              key={index}
-              className="flex items-start space-x-4 bg-green-50 p-6 rounded-2xl hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
-            >
-              <div className="p-3 bg-white rounded-xl shadow-sm">
-                {feature.icon}
-              </div>
-              <div>
-                <h3 className="font-bold text-gray-900 mb-1">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-gray-600">{feature.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      
-{/* 📱 MOBILE APP SECTION - Same as the uploaded image */}
-<section className="bg-[#F4FAF5] py-20">
-  <div className="max-w-7xl mx-auto px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-    
-    {/* Left Side - Two Phones */}
-    <div className="flex justify-center lg:justify-start relative">
-      <div className="absolute inset-0 bg-green-100 rounded-3xl opacity-40 blur-2xl"></div>
-
-      <div className="relative flex items-end space-x-[-80px]">
-        {/* Left Phone */}
-        <img
-          src="/images/farmer-login-screen.png"
-          alt="Farmer Store App Login Screen"
-          className="relative z-20 w-[250px] sm:w-[280px] rounded-[2rem] shadow-2xl"
-        />
-        {/* Right Phone */}
-        <img
-          src="/images/farmer-product-screen.png"
-          alt="Farmer Store Product Screen"
-          className="relative z-10 w-[250px] sm:w-[280px] rounded-[2rem] shadow-xl"
-        />
-      </div>
-    </div>
-
-    {/* Right Side - Text & Buttons */}
-    <div className="space-y-5 text-center lg:text-left">
-      <p className="text-lg text-gray-800 font-medium">Download the</p>
-      <h2 className="text-4xl lg:text-5xl font-extrabold text-green-700">
-        The Farmer Store
-      </h2>
-      <p className="text-gray-600 text-base max-w-md">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-      </p>
-
-      <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
+        <p className="text-base text-gray-700 leading-relaxed max-w-md">
+          Enjoy the comfort of fresh, healthy food delivered daily to your
+          doorstep.
+        </p>
+           <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
           alt="App Store"
@@ -225,12 +78,104 @@ const Hero = () => {
           className="h-14 cursor-pointer hover:opacity-80 transition-opacity"
         />
       </div>
+
+    
+      </div>
+
+      {/* RIGHT IMAGE */}
+      <div
+        className={`flex justify-center items-center transition-all duration-700 delay-200 ${
+          isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
+        }`}
+      >
+        <div className="relative w-full max-w-sm h-[320px] flex justify-center items-center">
+          {images.map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt={`Slide ${index + 1}`}
+              className={`absolute w-full h-full object-contain transition-opacity duration-700 ${
+                index === currentImageIndex ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+     
+{/* CATEGORIES SECTION */}
+<section className="py-12 px-6 lg:px-12 bg-white">
+  <div className="max-w-7xl mx-auto">
+    <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+      Explore Categories
+    </h2>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
+      {[
+      {
+      id: 1,
+      title: "Fresh Meat",
+      bgColor: "#ffeed6",
+      img: "https://firebasestorage.googleapis.com/v0/b/chatapps3-af7a5.appspot.com/o/gharoti%2Ffresh%20raw%20rib%20eye%20steaks%20isolated%20on%20white%20fresh%20r.png?alt=media&token=ff4ca4dc-65bc-4eac-bb59-be0029f51e21",
+      path: "/subscription/meat",
+    },
+    {
+      id: 2,
+      title: "Flours & Roti",
+      bgColor: "#E6F6E6",
+      img: "https://firebasestorage.googleapis.com/v0/b/chatapps3-af7a5.appspot.com/o/gharoti%2FChapati%20Flour_%20Uses_%20Baking%20Tips_%20and%20Substitutes%20.png?alt=media&token=4fb82d6b-553c-40d3-9761-fd6fdf5696e8",
+      path: "/subscription/roti",
+    },
+    {
+      id: 3,
+      title: "Farm Fresh Eggs",
+      bgColor: "#E7F5FF",
+      img: "https://firebasestorage.googleapis.com/v0/b/chatapps3-af7a5.appspot.com/o/gharoti%2FEggs%20Images%20-%20Free%20Download%20on%20Freepik.png?alt=media&token=1d102fc2-535b-47de-a27a-4925b1a86cda",
+      path: "/subscription/eggs",
+    },
+      ].map((cat) => (
+        <div
+          key={cat.id}
+          className="flex flex-col items-center cursor-pointer group relative transition-all duration-500"
+           onClick={() => navigate(cat.path)} // 👈 Replace with navigation
+        >
+          {/* Wrapper */}
+          <div className="relative w-[260px] h-[260px] rounded-full overflow-hidden">
+            {/* Circle Background */}
+            <div
+              className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
+              style={{ backgroundColor: cat.bgColor }}
+            ></div>
+
+            {/* Image */}
+            <img
+              src={cat.img}
+              alt={cat.title}
+              className="relative z-10 w-full h-full object-cover rounded-full transition-transform duration-500 group-hover:scale-110"
+            />
+
+            {/* Hover Overlay */}
+            <div className="absolute inset-0 rounded-full bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center z-20">
+              <span className="text-white font-semibold text-lg">Shop Now</span>
+            </div>
+          </div>
+
+          {/* Category Title */}
+          <p className="mt-5 text-xl font-semibold text-gray-800 transition-colors duration-300 group-hover:text-green-600">
+            {cat.title}
+          </p>
+        </div>
+      ))}
     </div>
   </div>
 </section>
 
-        {/* 🥦 QUALITY SECTION */}
-     <section className="bg-white py-20">
+
+      <section className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* LEFT CONTENT */}
         <div className="space-y-8">
@@ -273,7 +218,7 @@ const Hero = () => {
         <div className="flex justify-center relative">
           <div className="relative">
             {/* Circle Background Shape */}
-            <div className="absolute inset-0 bg-[#e9e9e4] rounded-full w-[460px] h-[460px] left-1/2 -translate-x-1/2"></div>
+            <div className="absolute inset-0 rounded-full w-[460px] h-[460px] left-1/2 -translate-x-1/2"  style={{ backgroundColor: "#ffeed6" }}></div>
 
             {/* Main Image */}
             <img
@@ -282,72 +227,36 @@ const Hero = () => {
               className="relative z-10 w-[460px] h-[460px] object-cover rounded-full"
             />
 
-            {/* Floating veggies */}
-            <div className="absolute top-6 left-[70%] text-5xl animate-bounce">
-              🥦
-            </div>
-            <div className="absolute top-20 right-[5%] text-5xl animate-bounce delay-200">
-              🍅
-            </div>
-            <div className="absolute bottom-16 left-[15%] text-5xl animate-bounce delay-300">
-              🥭
-            </div>
+           
           </div>
         </div>
       </div>
 
-      {/* NEWSLETTER SECTION */}
-      <div className="max-w-7xl mx-auto mt-20 px-8 lg:px-12">
-        <div className="bg-[#5C3A00] rounded-[50px] px-10 py-12 flex flex-col md:flex-row items-center justify-between gap-8 text-white">
-          <h3 className="text-2xl md:text-3xl font-semibold uppercase tracking-wide">
-            Subscribe To Newsletter
-          </h3>
-          <div className="flex items-center w-full md:w-auto md:min-w-[400px] border-b border-white">
-            <input
-              type="email"
-              placeholder="Enter Email Address"
-              className="flex-1 bg-transparent text-white placeholder-white px-4 py-3 focus:outline-none text-lg"
-            />
-            <button className="p-3 hover:scale-110 transition-transform">
-              <ArrowRight className="w-6 h-6 text-white" />
-            </button>
-          </div>
+      
+   
+    </section>
+
+      {/* FEATURES SECTION */}
+      <section className="bg-white py-16 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { icon: <Truck className="w-8 h-8" />, title: "Fast Delivery", desc: "Quick delivery to your doorstep" },
+            { icon: <Tag className="w-8 h-8" />, title: "Best Prices", desc: "Competitive prices guaranteed" },
+            { icon: <Wallet className="w-8 h-8" />, title: "Easy Payments", desc: "Multiple payment options available" },
+            { icon: <Headphones className="w-8 h-8" />, title: "Customer Support", desc: "24/7 support for all your needs" },
+          ].map((feature, index) => (
+            <div key={index} className="flex items-start space-x-4 bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition">
+              <div className="text-green-600">{feature.icon}</div>
+              <div>
+                <h3 className="font-bold text-gray-900 mb-1">{feature.title}</h3>
+                <p className="text-sm text-gray-600">{feature.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
-    </section>
+      </section>
 
-    
-      <style >{`
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-
-        @keyframes gradient {
-          0%,
-          100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-        }
-
-        .animate-fade-in {
-          animation: fade-in 1s ease-out;
-        }
-
-        .animate-gradient {
-          background-size: 200% auto;
-          animation: gradient 3s ease infinite;
-        }
-      `}</style>
-    </section>
+   
+    </div>
   );
-};
-
-export default Hero;
+}

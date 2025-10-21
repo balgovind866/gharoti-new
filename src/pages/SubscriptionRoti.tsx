@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, } from "lucide-react";
 
 
 
@@ -70,9 +70,9 @@ const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-50 to-white py-16 overflow-hidden">
+      <section className="relative bg-gradient-to-br bg-white to-white py-16 overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-green-200 rounded-full opacity-20 blur-3xl"></div>
         <div className="max-w-7xl mx-auto px-8 text-center relative z-10">
           <h1 className="text-5xl font-bold text-green-700 mb-4">
@@ -155,25 +155,7 @@ const [hoveredCard, setHoveredCard] = useState<number | null>(null);
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="bg-[#5C3A00] rounded-[50px] px-10 py-12 flex flex-col md:flex-row items-center justify-between gap-8 text-white">
-            <h3 className="text-2xl md:text-3xl font-semibold uppercase tracking-wide">
-              Subscribe To Newsletter
-            </h3>
-            <div className="flex items-center w-full md:w-auto md:min-w-[400px] border-b border-white">
-              <input
-                type="email"
-                placeholder="Enter Email Address"
-                className="flex-1 bg-transparent text-white placeholder-white px-4 py-3 focus:outline-none text-lg"
-              />
-              <button className="p-3 hover:scale-110 transition-transform">
-                <ArrowRight className="w-6 h-6 text-white" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+    
 
 
     </div>

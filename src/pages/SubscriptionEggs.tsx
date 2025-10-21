@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, ArrowRight } from "lucide-react";
+import { Check,  } from "lucide-react";
 const SubscriptionEggs = () => {
    const [hoveredCard, setHoveredCard] = useState<number | null>(null); 
 
@@ -82,11 +82,11 @@ const SubscriptionEggs = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br bg-white">
       {/* Hero Section */}
-       <section className="relative bg-gradient-to-br from-green-50 to-white py-16 overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-red-200 rounded-full opacity-20 blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-200 rounded-full opacity-20 blur-3xl"></div>
+       <section className="relative bg-gradient-to-bre py-16 overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-20 blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full opacity-20 blur-3xl"></div>
         <div className="max-w-7xl mx-auto px-8 text-center relative z-10">
           <div className="inline-block mb-4">
             <span className="bg-orange-100 text-orange-600 px-6 py-2 rounded-full font-semibold text-sm">
@@ -261,7 +261,7 @@ const SubscriptionEggs = () => {
       </section>
 
       {/* Nutritional Benefits Section */}
-      <section className="bg-gradient-to-br from-green-50 to-gray-50 py-16">
+      <section className="bg-gradient-to-br bg-white py-16">
         <div className="max-w-7xl mx-auto px-8">
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-4">
             Nutritional Powerhouse
@@ -292,26 +292,7 @@ const SubscriptionEggs = () => {
         </div>
       </section>
 
-      {/* Newsletter Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="bg-[#5C3A00] rounded-[50px] px-10 py-12 flex flex-col md:flex-row items-center justify-between gap-8 text-white">
-            <h3 className="text-2xl md:text-3xl font-semibold uppercase tracking-wide">
-              Subscribe To Newsletter
-            </h3>
-            <div className="flex items-center w-full md:w-auto md:min-w-[400px] border-b border-white">
-              <input
-                type="email"
-                placeholder="Enter Email Address"
-                className="flex-1 bg-transparent text-white placeholder-white px-4 py-3 focus:outline-none text-lg"
-              />
-              <button className="p-3 hover:scale-110 transition-transform">
-                <ArrowRight className="w-6 h-6 text-white" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+     
 
     
     </div>

@@ -80,9 +80,9 @@ const SubscriptionMeat = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-50 to-white py-16 overflow-hidden">
+      <section className="relative bg-gradient-to-br bg-white to-white py-16 overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-red-200 rounded-full opacity-20 blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-200 rounded-full opacity-20 blur-3xl"></div>
         

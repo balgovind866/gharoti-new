@@ -1,134 +1,96 @@
-import { useState, } from "react";
-import {
-  ShoppingCart,
-  User,
-  ChevronDown,
-} from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { ChevronDown,User } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-const navigate = useNavigate();
+  const [cityDropdown, setCityDropdown] = useState(false);
+  const navigate = useNavigate();
 
   return (
-    <nav className="bg-white relative">
-      {/* Main Navigation */}
-      <div className="px-8 lg:px-12">
-        <div className="flex items-center justify-between py-4">
+    <nav className="bg-white border-b border-gray-100">
+      <div className="flex items-center justify-between px-12 lg:px-60 py-3">
+        {/* Left Section: Logo + Location */}
+        <div className="flex items-center space-x-1">
           {/* Logo */}
-          <div className="flex items-center">
-            
-            <div onClick={
-() => navigate('/')}
-             className="leading-none">
-              <div className="flex items-baseline">
-                <span className="text-3xl font-serif italic text-green-700">Gha</span>
-                <span className="text-3xl font-serif text-gray-800">Roti</span>
-                <span className="text-green-600 text-2xl ml-1">🌿</span>
-              </div>
-              <div className="text-xs uppercase tracking-widest text-gray-500 ml-1">
-                Fresh From Fields To Your Home
-              </div>
-            </div>
+          <div onClick={() => navigate("/")} className="cursor-pointer flex items-center space-x-2">
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/chatapps3-af7a5.appspot.com/o/gharoti%2Flogo.png?alt=media&token=6c9b78a7-e4bc-46c7-bbcf-4c3c5cf32f35" // replace with your actual logo path
+              alt="Logo"
+              className="h-15 w-auto"
+            />
           </div>
 
-          {/* Center - Social Icons & Guarantee */}
-          <div className="hidden lg:flex items-center space-x-5">
-            <div className="flex items-center space-x-4 text-lg">
-              <a className="text-[#6b6d6f] hover:opacity-80 transition"><i className="fab fa-facebook-f"></i></a>
-              <a href="#" className="text-[#6b6d6f] hover:opacity-80 transition"><i className="fab fa-x-twitter"></i></a>
-              <a href="#" className="text-[#6b6d6f] hover:opacity-80 transition"><i className="fab fa-linkedin-in"></i></a>
-              <a href="#" className="text-[#6b6d6f] hover:opacity-80 transition"><i className="fab fa-instagram"></i></a>
-              <a href="#" className="text-[#6b6d6f] hover:opacity-80 transition"><i className="fab fa-youtube"></i></a>
-            </div>
+          {/* Location */}
+         <div className="relative">
+  <button
+    onClick={() => setCityDropdown(!cityDropdown)}
+    className="flex items-center space-x-1 text-sm text-gray-800 font-medium"
+  >
+    <span className="text-gray-500">Deliver In</span>
+    <span className="text-black font-semibold">Chennai</span>
+    <ChevronDown className="w-4 h-4 text-gray-500" />
+  </button>
 
-            <div className="w-px h-5 bg-gray-300"></div>
+  {cityDropdown && (
+    <div className="absolute top-8 left-0 bg-white border rounded-md shadow-md text-sm z-20">
+      <ul>
+        {["Chennai", "Bangalore", "Mumbai", "Delhi"].map((city) => (
+          <li
+            key={city}
+            className="px-4 py-2 hover:bg-gray-50 cursor-pointer"
+            onClick={() => {
+              setCityDropdown(false)
+            }}
+          >
+            {city}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
 
-            <div className="flex items-center text-sm font-semibold text-gray-800">
-              <span className="text-lg text-green-700 mr-1">₹</span>
-              <span>Low Price Guarantee</span>
-            </div>
-          </div>
-
-          {/* Right Section - Cart & Login */}
-          <div className="flex items-center space-x-8">
-            <button className="flex items-center space-x-2 group">
-              <div className="relative">
-                <ShoppingCart className="h-5 w-5 text-gray-700 group-hover:text-green-600 transition-colors" />
-                <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center font-bold">
-                  0
-                </span>
+  {/* 👇 Ghar Roti text just below */}
+    <div className="flex items-baseline">
+                <span className="text-2xl font-bold text-green-700">Gha</span>
+                <span className="text-2xl font-bold text-gray-800">Roti</span>
+               
               </div>
-              <span className="text-sm font-medium text-gray-700 group-hover:text-green-600 transition-colors">
-                My Cart
-              </span>
-            </button>
-            {/* //hdldke */}
+</div>
+        </div>
 
-            <button className="flex items-center space-x-2 group">
-              <User className="h-5 w-5 text-gray-700 group-hover:text-green-600 transition-colors" />
-              <span className="text-sm font-medium text-gray-700 group-hover:text-green-600 transition-colors">
-                Login/ Sign up
-              </span>
-            </button>
+        {/* Middle Section: Navigation */}
+        <div className="hidden md:flex items-center space-x-8 text-[15px] font-medium text-gray-800">
+          <div
+            onClick={() => navigate("/")}
+            className="hover:text-green-600 cursor-pointer transition-colors"
+          >
+            Home
+          </div>
+          <div
+            onClick={() => navigate("/aboutUs")}
+            className="hover:text-green-600 cursor-pointer transition-colors"
+          >
+            About Us
+          </div>
+          <div
+            onClick={() => navigate("/contact")}
+            className="hover:text-green-600 cursor-pointer transition-colors"
+          >
+            Contact Us
           </div>
         </div>
-      </div>
 
-      {/* Bottom Navigation Bar */}
-      <div className="bg-green-50 border-t border-gray-100 relative">
-        <div className="px-8 lg:px-12">
-          <div className="flex items-center justify-start py-3 space-x-6 relative">
-            {/* Subscription Button with Dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="flex items-center bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-xl font-medium space-x-2 shadow-sm transition"
-              >
-                <span>Subscription Plans</span>
-                <ChevronDown className={`w-4 h-4 transform transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+        {/* Right Section: Button */}
+         <div className="flex items-center space-x-6">
+             
+              <button className="hidden sm:flex items-center space-x-2 text-gray-700 hover:text-green-600 transition">
+                <User className="w-5 h-5" />
+                <span className="text-sm font-medium">Login</span>
               </button>
-
-             {isDropdownOpen && (
-  <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg border border-gray-100 z-20">
-    <ul className="text-gray-700 text-sm">
-      <li
-        onClick={() => { navigate("/subscription/roti"); setIsDropdownOpen(false); }}
-        className="px-4 py-2 hover:bg-green-50 cursor-pointer"
-      >
-        Roti & Aata
-      </li>
-      <li
-        onClick={() => { navigate("/subscription/meat"); setIsDropdownOpen(false); }}
-        className="px-4 py-2 hover:bg-green-50 cursor-pointer"
-      >
-        Meat
-      </li>
-      <li
-        onClick={() => { navigate("/subscription/eggs"); setIsDropdownOpen(false); }}
-        className="px-4 py-2 hover:bg-green-50 cursor-pointer"
-      >
-        Eggs
-      </li>
-    </ul>
-  </div>
-)}
+              <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg font-medium transition">
+                Download App
+              </button>
             </div>
-
-            {/* Other Nav Links */}
-           <nav className="flex items-center space-x-8 text-sm font-medium">
-              <div onClick={() => navigate('/')} className="text-black hover:text-green-600 transition">
-    Home
-  </div>
-  <div onClick={() => navigate('/aboutUs')} className="text-black hover:text-green-600 transition">
-    About Us
-  </div>
-  <div onClick={() => navigate('/contact')} className="text-black hover:text-green-600 transition">
-    Contact Us
-  </div>
-</nav>
-          </div>
-        </div>
       </div>
     </nav>
   );
